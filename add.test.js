@@ -18,4 +18,10 @@ describe("add", function () {
   it("throw error on negative number", function () {
     expect(() => add("//|1|2\n|3\n|-10")).to.throw("Found negative number");
   });
+
+  it("throw error on non numeric character", function () {
+    expect(() => add("//|1|2\n|3\n|abc")).to.throw(
+      "Found non numeric character"
+    );
+  });
 });
