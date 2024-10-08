@@ -20,7 +20,7 @@ function add(str = "//;\n1;2") {
     }
 
     if (number < 0) {
-      throw Error("Found negative number");
+      throw Error(`Negative numbers not allowed ${number}`);
     }
 
     count += number;

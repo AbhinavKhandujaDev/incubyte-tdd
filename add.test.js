@@ -16,7 +16,9 @@ describe("add", function () {
   });
 
   it("throw error on negative number", function () {
-    expect(() => add("//|1|2\n|3\n|-10")).to.throw("Found negative number");
+    expect(() => add("//|1|2\n|3\n|-10")).to.throw(
+      "Negative numbers not allowed -10"
+    );
   });
 
   it("throw error on non numeric character", function () {
