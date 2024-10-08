@@ -10,6 +10,10 @@ describe("add", function () {
     expect(add("//|1|2\n|3\n|10")).to.equal(16);
   });
 
+  it("should handle new lines between numbers", function () {
+    expect(add("1\n\n2,3")).to.equal(6);
+  });
+
   it("should output 0", function () {
     expect(add("//|")).to.equal(0);
     expect(add("")).to.equal(0);
