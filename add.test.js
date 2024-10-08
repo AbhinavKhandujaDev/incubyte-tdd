@@ -14,4 +14,8 @@ describe("add", function () {
     expect(add("//|")).to.equal(0);
     expect(add("")).to.equal(0);
   });
+
+  it("throw error on negative number", function () {
+    expect(() => add("//|1|2\n|3\n|-10")).to.throw("Found negative number");
+  });
 });
