@@ -1,4 +1,4 @@
-function add(str = "//;\n1;2") {
+function add(str = "//|1|2\n|3\n|-10|-11") {
   const hasDelimiter = str.startsWith("//");
   let delmtr = ",";
 
@@ -12,7 +12,7 @@ function add(str = "//;\n1;2") {
   const numbers = strWithoutDelmtr.split(delmtr);
 
   let count = 0;
-
+  const negNums = [];
   numbers.forEach((num) => {
     const number = Number(num);
     if (!number && number !== 0) {
@@ -20,11 +20,15 @@ function add(str = "//;\n1;2") {
     }
 
     if (number < 0) {
-      throw Error(`Negative numbers not allowed ${number}`);
+      negNums.push(number);
     }
 
     count += number;
   });
+
+  if (negNums.length) {
+    throw Error(`Negative numbers not allowed ${negNums}`);
+  }
 
   return count;
 }

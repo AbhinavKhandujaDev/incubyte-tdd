@@ -16,13 +16,15 @@ describe("add", function () {
   });
 
   it("throw error on negative number", function () {
-    expect(() => add("//|1|2\n|3\n|-10")).to.throw(
-      "Negative numbers not allowed -10"
+    expect(() => add("//|1|2\n|3\n|-10|-11")).to.Throw(
+      Error,
+      "Negative numbers not allowed -10,-11"
     );
   });
 
   it("throw error on non numeric character", function () {
-    expect(() => add("//|1|2\n|3\n|abc")).to.throw(
+    expect(() => add("//|1|2\n|3\n|abc")).to.Throw(
+      Error,
       "Found non numeric character"
     );
   });
